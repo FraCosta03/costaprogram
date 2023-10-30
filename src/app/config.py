@@ -1,14 +1,13 @@
 class Config:
-    SECRET_KEY = 'my secret..'
-
+    SECRET_KEY = 'my secret...'
 class TestingConfig(Config):
     TESTING =True
-    pass
 class DevelopmentConfig(Config):
-    pass
+    DEBUG=True
 class ProductionConfig(Config):
-    pass
-Config= {
+    DEBUG=False
+    
+config= {
     'testing':TestingConfig,
     'development':DevelopmentConfig,
     'production':ProductionConfig,
