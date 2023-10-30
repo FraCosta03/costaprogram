@@ -5,6 +5,9 @@ from src.app.__init__ import create_app
 app = create_app()
 
 #@app.route ('/welcome', methods=['GET'])
-@app.get ('/')
+@app.get ('/welcome')
 def welcome():
-    return {'message':'ciao da costa program'},HTTPStatus.CREATED
+    return 'welcome'
+@app.get('/login')
+def login():
+    return 'login'
