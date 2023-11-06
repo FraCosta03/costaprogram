@@ -3,3 +3,4 @@ from http import HTTPStatus
 from src.app.__init__ import create_app
 
 app = create_app('default')
+from src.app.models import Wio

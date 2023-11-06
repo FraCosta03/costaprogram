@@ -1,15 +1,22 @@
 class Config:
-    SECRET_KEY = 'my secret...'
+    SECRET_KEY = 'my secret..'
+    TESTING=False
+
 class TestingConfig(Config):
-    TESTING =True
+    TESTING=True
+    SQLALCHEMY_DATABASE_URI = "sqlite:///wio.db"
+
 class DevelopmentConfig(Config):
     DEBUG=True
+    #SQLALCHEMY_DATABASE_URI = "mysql:///wio.db" 
+    SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://wio2023:wio2023@localhost:3306/wio2023"
 class ProductionConfig(Config):
     DEBUG=False
-    
-config= {
+
+config = {
     'testing':TestingConfig,
     'development':DevelopmentConfig,
-    'production':ProductionConfig,
+    'production' : ProductionConfig,
+
     'default': DevelopmentConfig
 }
